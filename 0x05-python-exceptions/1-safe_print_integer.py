@@ -7,5 +7,5 @@ def safe_print_integer(value):
     except:
         return False
     else:
-        print("{}".format(i))
+        print("{:d}".format(i))
         return True
