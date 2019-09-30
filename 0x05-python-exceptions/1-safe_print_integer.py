@@ -4,6 +4,8 @@ def safe_print_integer(value):
         i = int(value)
     except ValueError:
         return False
+    except:
+        return False
     else:
         print("{}".format(i))
         return True
