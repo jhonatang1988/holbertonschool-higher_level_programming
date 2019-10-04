@@ -1,0 +1,35 @@
+0 tasks tests
+===
+>>> add = __import__('0-add_integer').add_integer
+>>> add(4, 8)
+12
+>>> add(4.0, 8)
+12
+>>> add(4, 8.00)
+12
+>>> add(4.0000000, 5.000000)
+9
+>>> add(4, "s")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add("s", 4)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add("s", "s")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add(4.0, "s")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>> add("s", 4.0)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add("s")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
