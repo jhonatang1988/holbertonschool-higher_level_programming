@@ -1,0 +1,20 @@
+tests for task 3
+===
+>>> say = __import__('3-say_my_name').say_my_name
+
+>>> say("jhonatan", "galindo")
+My name is jhonatan galindo
+>>> say(1, "galindo")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+>>> say("jhonatan", 2)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+>>> say("","")
+My name is  
+>>> say(["jhonatan", "galindo"], "gomez")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
