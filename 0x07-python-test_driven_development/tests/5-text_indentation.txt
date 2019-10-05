@@ -1,0 +1,19 @@
+test for task 5
+===
+>>> ti = __import__('5-text_indentation').text_indentation
+>>> ti(".")
+.
+<BLANKLINE>
+>>> ti("?")
+?
+<BLANKLINE>
+>>> ti(":")
+:
+<BLANKLINE>
+>>> ti(":?.")
+:
+<BLANKLINE>
+?
+<BLANKLINE>
+.
+<BLANKLINE>
