@@ -17,3 +17,10 @@ test for task 5
 <BLANKLINE>
 .
 <BLANKLINE>
+>>> ti("hola. como estas? lo siguiente:")
+hola.
+<BLANKLINE>
+como estas?
+<BLANKLINE>
+lo siguiente:
+<BLANKLINE>
