@@ -2,6 +2,8 @@
 """
 function to check if is instance of a class
 """
+
+
 def is_kind_of_class(obj, a_class):
     """
     Args:
