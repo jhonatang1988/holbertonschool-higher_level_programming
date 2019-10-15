@@ -10,6 +10,6 @@ class MyList(list):
     * new_list = a shadow copy of the list
     """
     def print_sorted(self):
-        new_list = self[:]
+        new_list = self.copy()
         new_list.sort()
         print(new_list)
