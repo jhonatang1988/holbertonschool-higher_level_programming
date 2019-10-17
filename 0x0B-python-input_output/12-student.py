@@ -12,9 +12,7 @@ class Student():
         if attrs is None:
             return (self.__dict__)
         else:
-            is_list_str = bool(attrs) and isinstance(attrs, list) \
-                          and all(isinstance(att, str) for att in attrs)
-            if is_list_str:
+            if type(attrs) is list:
                 new_dict = {}
                 for att in attrs:
                     if att in self.__dict__:
