@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 import json
+import os
+
 
 class Base():
     __nb_objects = 0
@@ -41,3 +43,18 @@ class Base():
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+
+        if os.path.isfile("./" + filename):
+            new_list = list()
+            with open(filename, encoding='utf-8', mode='r') as a_file:
+                an_obj = a_file.read()
+                a_list_of_dicts = cls.from_json_string(an_obj)
+                for attrs in a_list_of_dicts:
+                    new_list.append(cls.create(**attrs))
+                return new_list
+        else:
+            return list()
