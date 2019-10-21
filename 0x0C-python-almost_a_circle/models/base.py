@@ -26,3 +26,9 @@ class Base():
         filename = cls.__name__ + ".json"
         with open(filename, encoding='utf-8', mode='w') as a_file:
             return a_file.write(json_dictionary)
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string and not json_string is None:
+            return json.loads(json_string)
+        return list()
