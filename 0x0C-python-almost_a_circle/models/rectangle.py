@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from models.base import Base
+import json
 
 
 class Rectangle(Base):
@@ -96,3 +97,11 @@ class Rectangle(Base):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        arg_names = list(self.__init__.__code__.co_varnames)
+        del(arg_names[0])
+        new_dict = {}
+        for k in arg_names:
+            new_dict[k] = getattr(self, k)
+        return new_dict
