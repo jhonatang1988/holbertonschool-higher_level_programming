@@ -30,3 +30,11 @@ class Square(Rectangle):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        arg_names = list(self.__init__.__code__.co_varnames)
+        del(arg_names[0])
+        new_dict = {}
+        for k in arg_names:
+            new_dict[k] = getattr(self, k)
+        return new_dict
