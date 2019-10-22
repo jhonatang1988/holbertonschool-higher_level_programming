@@ -35,7 +35,7 @@ class Base():
     @classmethod
     def save_to_file(cls, list_objs):
         """
-        save_to_file
+        save_to_file class method
         """
         a_list = []
         filename = cls.__name__ + ".json"
