@@ -1,10 +1,15 @@
 #!/usr/bin/python3
+"""
+model for Rectangles
+"""
 from models.base import Base
 import json
 
 
 class Rectangle(Base):
-
+    """
+    Rectangle Class
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
         self.height = height
@@ -18,7 +23,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, a_value):
-        if type(a_value) is type(1):
+        if type(a_value) is int:
             if a_value < 1:
                 raise ValueError("width must be > 0")
             else:
@@ -26,14 +31,13 @@ class Rectangle(Base):
         else:
             raise TypeError("width must be an integer")
 
-
     @property
     def height(self):
         return self.__height
 
     @height.setter
     def height(self, a_value):
-        if type(a_value) is type(1):
+        if type(a_value) is int:
             if a_value < 1:
                 raise ValueError("height must be > 0")
             else:
@@ -47,7 +51,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, a_value):
-        if type(a_value) is type(1):
+        if type(a_value) is int:
             if a_value < 0:
                 raise ValueError("x must be >= 0")
             else:
@@ -61,7 +65,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, a_value):
-        if type(a_value) is type(1):
+        if type(a_value) is int:
             if a_value < 0:
                 raise ValueError("y must be >= 0")
             else:
@@ -83,9 +87,12 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        return("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}" \
-              .format(self.id, self.__x, self.__y, \
-                      self.__width, self.__height))
+        return("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
+               .format(self.id,
+                       self.__x,
+                       self.__y,
+                       self.__width,
+                       self.__height))
 
     def update(self, *args, **kwargs):
         if args:

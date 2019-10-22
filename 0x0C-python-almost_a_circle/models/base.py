@@ -1,13 +1,23 @@
 #!/usr/bin/python3
+"""
+base class
+"""
 import json
 import os
 
 
 class Base():
+    """
+    class base
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        if not id == None:
+        """
+        init method
+        """
+
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
@@ -15,12 +25,18 @@ class Base():
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        if not list_dictionaries is None and list_dictionaries:
+        """
+        to_json_string static method
+        """
+        if list_dictionaries is not None and list_dictionaries:
             return json.dumps(list_dictionaries)
         return "[]"
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        save_to_file
+        """
         a_list = []
         for obj in list_objs:
             a_list.append(obj.to_dictionary())
@@ -31,12 +47,18 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
-        if json_string and not json_string is None:
+        """
+        from_json_string static method
+        """
+        if json_string and json_string is not None:
             return json.loads(json_string)
         return list()
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        create class method
+        """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         elif cls.__name__ == "Square":
@@ -46,6 +68,9 @@ class Base():
 
     @classmethod
     def load_from_file(cls):
+        """
+        load_from_file class method
+        """
         filename = cls.__name__ + ".json"
 
         if os.path.isfile("./" + filename):
