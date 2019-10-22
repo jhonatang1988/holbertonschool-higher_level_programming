@@ -34,18 +34,18 @@ class Base():
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """
-        save_to_file class method
-        """
-        a_list = []
+        """  save_to_fie: save in a fil the dicts of each instance passed"""
         filename = cls.__name__ + ".json"
-        with open(filename, mode='w') as a_file:
-            if list_objs is not None and list_objs:
-                for obj in list_objs:
-                    a_list.append(obj.to_dictionary())
-                    json_dictionary = cls.to_json_string(a_list)
-                return a_file.write(json_dictionary)
-            return "[]"
+        new = []
+        result = ""
+        with open(filename, 'w') as fd:
+            if list_objs is None:
+                result = cls.to_json_string(new)
+            else:
+                for elem in list_objs:
+                    new.append(elem.to_dictionary())
+                result = cls.to_json_string(new)
+            fd.write(result)
 
     @staticmethod
     def from_json_string(json_string):
