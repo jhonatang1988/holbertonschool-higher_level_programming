@@ -14,8 +14,7 @@ if __name__ == "__main__":
             passwd = sys.argv[2]
             db = sys.argv[3]
 
-            sql_query = "SELECT * FROM states WHERE name\
-            REGEXP '^[N].*$' ORDER BY id ASC"
+            sql_query = "SELECT * FROM states ORDER BY id ASC"
 
             con = MySQLdb.connect(host=host, port=port,
                                   user=usr, passwd=passwd, db=db)
@@ -27,7 +26,8 @@ if __name__ == "__main__":
             nstates = cur.fetchall()
 
             for nstate in nstates:
-                print("{}".format(nstate))
+                if nstate[1][0] == 'N':
+                    print("{}".format(nstate))
 
         except:
             print("error reading mysql query")
