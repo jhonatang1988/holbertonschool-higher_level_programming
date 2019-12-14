@@ -15,7 +15,7 @@ if __name__ == "__main__":
             db = sys.argv[3]
 
             sql_query = "SELECT * FROM states WHERE name\
-            LIKE 'N%' ORDER BY id ASC"
+            REGEXP '^[N].*$' ORDER BY id ASC"
 
             con = MySQLdb.connect(host=host, port=port,
                                   user=usr, passwd=passwd, db=db)
