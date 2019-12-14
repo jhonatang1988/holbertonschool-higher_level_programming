@@ -15,14 +15,14 @@ if __name__ == "__main__":
             db = sys.argv[3]
             state = sys.argv[4]
 
-            sql_query = "SELECT * FROM states WHERE BINARY name='{}'".format(state)
+            sq = "SELECT * FROM states WHERE BINARY name='{}'".format(state)
 
             con = MySQLdb.connect(host=host, port=port,
                                   user=usr, passwd=passwd, db=db)
 
             cur = con.cursor()
 
-            cur.execute(sql_query)
+            cur.execute(sq)
 
             staterecords = cur.fetchall()
 
