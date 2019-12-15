@@ -23,8 +23,8 @@ if __name__ == '__main__':
             session = Session()
 
             state_id = session.query(State.id) \
-                       .filter(State.name == state) \
-                       .all()
+                              .filter(State.name == state) \
+                              .all()
 
             if state_id:
                 print(state_id[0][0])
