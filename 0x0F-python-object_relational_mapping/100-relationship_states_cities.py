@@ -20,13 +20,19 @@ if __name__ == "__main__":
             Base.metadata.create_all(engine)
 
             Session = sessionmaker(bind=engine)
+
             session = Session()
 
-            state = State("California")
-            city = City("San Francisco")
-            state.cities.append(city)
-            session.add(city)
-        except:
+            california = State("California")
+            sanfrancisco = City("San Francisco")
+            california.cities.append(sanfrancisco)
+
+            session.add(california)
+            session.add(sanfrancisco)
+
+            session.commit()
+        except Exception as e:
+            raise
             print("something wrong about the query")
 
         finally:
