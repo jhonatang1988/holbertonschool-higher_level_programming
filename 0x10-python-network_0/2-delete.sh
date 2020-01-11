@@ -1,3 +1,3 @@
 #!/bin/bash
 # send a DELETE request and output response body
-curl -LsX DELETE "$1"
+curl -L -s -X DELETE "$1"
