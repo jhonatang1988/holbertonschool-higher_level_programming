@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # display the size of the response body in bytes
 if [[ $# -ne 1 ]]; then
     exit 1;
