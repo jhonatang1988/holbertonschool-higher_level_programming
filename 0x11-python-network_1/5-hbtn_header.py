@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-get cystom header from request
+get custom header from request
 """
 import requests
 import sys
@@ -8,4 +8,4 @@ import sys
 
 if __name__ == "__main__":
     r = requests.get(sys.argv[1])
-    print(r.headers['x-request-id'])
+    print(r.headers.get('X-Request-Id'))
