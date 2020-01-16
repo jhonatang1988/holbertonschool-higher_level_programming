@@ -12,6 +12,6 @@ if __name__ == "__main__":
     if r.status_code == 200:
         rjson = r.json()
         if rjson:
-            print(rjson['id'])
+            print(rjson.get('id'))
         else:
             print("None")
