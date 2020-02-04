@@ -1,0 +1,2 @@
+# about
+## fundamentals of javascript
