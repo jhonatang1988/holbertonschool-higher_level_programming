@@ -7,5 +7,5 @@ try {
   const data = fs.readFileSync(`./${fileA}`, 'utf8');
   console.log(data);
 } catch (err) {
-  console.error(err);
+  console.log(err);
 }
