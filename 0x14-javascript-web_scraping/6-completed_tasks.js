@@ -3,7 +3,7 @@ const r = require('request');
 const url = process.argv[2];
 r(url, function (error, response, body) {
   if (error) {
-    console.log(error);
+    console.error(error);
   } else {
     const todos = JSON.parse(body);
     const uniqueIds = new Set();
