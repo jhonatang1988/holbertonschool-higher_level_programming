@@ -1,10 +1,15 @@
 #!/usr/bin/node
-const Square = require('./5-square');
-Square.prototype.charPrint = function (c) {
-  if (c) {
-    this.print(c);
-  } else {
-    this.print('X');
-  }
+const SquareSuper = require('./5-square');
+class Square extends SquareSuper {
+    constructor(size){
+	super(size, size);
+    }
+    charPrint(c){
+	if(c) {
+	    this.print(c);
+	} else {
+	    this.print('X');
+	}
+    }
 };
 module.exports = Square;
