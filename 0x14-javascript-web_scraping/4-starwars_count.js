@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const r = require('request');
-const url = `${process.argv[2]}/?format=json`;
+const url = process.argv[2];
 let page;
 r(url, function (error, response, body) {
   if (error) {
